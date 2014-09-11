@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20140909004217) do
 
   create_table "bags", force: true do |t|
-    t.string   "size"
+    t.integer  "size"
     t.integer  "locker_id"
     t.string   "guest_name"
     t.datetime "created_at"
@@ -22,8 +22,9 @@ ActiveRecord::Schema.define(version: 20140909004217) do
   end
 
   create_table "lockers", force: true do |t|
-    t.string   "size"
-    t.boolean  "empty"
+    t.integer  "size"
+    t.boolean  "empty",      default: true
+    t.integer  "bag_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
