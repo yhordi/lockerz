@@ -5,6 +5,8 @@ class LockersController < ApplicationController
     @lockers = Locker.all
   end
 
+
+
   def get
   end
 

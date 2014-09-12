@@ -1,11 +1,12 @@
 require "spec_helper"
 
 describe Locker do
-  context "Validations" do
+  context "validations" do
     it { should have_one(:bag) }
+    it { should validate_presence_of(:size)}
   end
   context "contents" do
-    before :each do
+    before(:each) do
       @locker = Locker.new
       @locker.size = 2
       @locker.id = 2
@@ -25,13 +26,10 @@ describe Locker do
     end
   end
   context "existstance" do
-    before :each do
+    before(:each) do
       @locker = Locker.new
       @locker.id = 3
       @locker.size = 3
-    end
-    it "is given an id" do
-      expect(@locker.id).to eq(3)
     end
     it "is given a size" do
       expect(@locker.size).to eq(3)
