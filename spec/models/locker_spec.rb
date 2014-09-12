@@ -5,14 +5,23 @@ describe Locker do
     it { should have_one(:bag) }
   end
   context "contents" do
-    it "should hold a bag of the corresposnding size" do
-      pending
+    before :each do
+      @locker = Locker.new
+      @locker.size = 2
+      @locker.id = 2
+      @bag = Bag.new
+      @bag.id = 2
+      @bag.guest_name = "Kelley Puckett"
+      @bag.size = 2
+      @bag.locker_id = 2
+      @locker.bag_id = 2
     end
-    it "should not hold a bag larger than it's own size" do
-      pending
+    it "should hold a bag of the corresposnding size" do
+      expect(@locker.size).to eq(@bag.size)
     end
     it "can hold a bag smaller than it's size" do
-      pending
+      @bag.size = 1
+      expect(@bag.size).to be < (@locker.size)
     end
   end
   context "existstance" do

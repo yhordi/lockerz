@@ -240,11 +240,20 @@
         null,
         1,
         1,
-        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
         null,
         1,
         1,
         null,
+        1,
         1,
         1,
         null,
@@ -274,7 +283,7 @@
         null
       ]
     },
-    "timestamp": 1410471013
+    "timestamp": 1410542682
   },
   "Unit Tests": {
     "coverage": {

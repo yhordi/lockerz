@@ -2,7 +2,7 @@ require "spec_helper"
 
 describe Bag do
   context "Validations" do
-    before(:each) do
+    before :each do
       @locker = Locker.new
       @locker.size = 2
       @locker.id = 2
