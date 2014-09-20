@@ -1,0 +1,9 @@
+<% @lockers.each do |locker| %>
+  <h1>locker #<%= locker.id %></h1>
+  <p>size <%= locker.size %></p>
+  <% if locker.empty == true %>
+  <p>This locker is available</p>
+  <% else %>
+  <p>This locker is not available</p>
+  <% end %>
+<% end %>
