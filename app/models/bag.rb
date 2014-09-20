@@ -14,7 +14,7 @@ class Bag < ActiveRecord::Base
   end
 
   def store
-     p self.locker
+    # p self.locker
     self.locker.update_column(:empty, false)
   end
 end
