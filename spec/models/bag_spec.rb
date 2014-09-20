@@ -5,8 +5,8 @@ describe Bag do
     before(:each) do
       @locker = Locker.new
       @locker.size = 2
-      @bag = Bag.new
       @locker.save
+      @bag = Bag.new
       @bag.size = 2
       @bag.locker = @locker
       @bag.guest_name = "Kelley Puckett"
@@ -17,7 +17,6 @@ describe Bag do
       @bag.size = nil
       expect(@bag).to_not be_valid
     end
-    it { should validate_uniqueness_of(:locker_id) }
     it "should return an error if a bag has no guest_name" do
       @bag.guest_name = nil
       expect(@bag).to_not be_valid
@@ -28,20 +27,24 @@ describe Bag do
     it "should validate that the bag is in a locker" do
       expect(@bag.locker_id).to_not eq(nil)
     end
-    it "should not validate a bag with a size greater than than the locker size" do
-      @bag.size = 3
-      expect(@bag).to_not be_valid
-    end
   end
   context "invalidations" do
     before(:each) do
+      @locker = Locker.new
+      @locker.size = 3
+      @locker.save
       @bag = Bag.new
+      @bag.locker = @locker
     end
     it "should not validate a bag with no guest_name" do
-      expect(@bag.guest_name).to eq(nil)
+      expect(@bag).to_not be_valid
     end
     it "should not validate a bag with no size" do
-      expect(@bag.size).to eq(nil)
+      expect(@bag).to_not be_valid
+    end
+    it "should not validate a bag with a size greater than than the locker size" do
+      @bag.size = 3
+      expect(@bag).to_not be_valid
     end
   end
 end
