@@ -42,7 +42,7 @@ at the command line:
 
 ### What is the app doing?
 
-<p>The app takes data entered from the user and runs it through the model validations, if for any reason the data isn't valid the data will not be saved in the database. The rspec suite has several stubs passed through to make sure of the following:</p>
+<p>The app takes data entered from the user and runs it through the model validations, if for any reason the data isn't valid the data will not be saved in the database. The rspec suite has several stubs passed through to make sure of the following things are true:</p>
 
 <li>
   <ul>A bag belongs to a locker.</ul>
